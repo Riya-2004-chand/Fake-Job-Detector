@@ -47,7 +47,7 @@ def predict(job: JobInput):
         risk = "Medium"
     else:
         risk = "Low"
-    prediction = "FAKE" if prob > 0.45 or len(flags) >= 2 else "REAL"
+    prediction = "FAKE" if prob > 0.55 or len(flags) >= 2 else "REAL"
     db = SessionLocal()
     record = JobResult(
         text=job.text[:500],
